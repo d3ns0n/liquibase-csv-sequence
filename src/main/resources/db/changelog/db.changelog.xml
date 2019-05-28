@@ -1,0 +1,25 @@
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd">
+
+    <changeSet id="1" author="d3ns0n">
+        <createTable tableName="user">
+            <column name="id" type="INT">
+                <constraints unique="true" nullable="false" />
+            </column>
+            <column name="name" type="VARCHAR" />
+        </createTable>
+    </changeSet>
+
+    <changeSet id="2" author="d3ns0n">
+        <createSequence sequenceName="id_seq" />
+    </changeSet>
+
+    <changeSet id="3" author="d3ns0n">
+        <loadData tableName="user" file="db/changelog/users.csv">
+            <column name="id" type="SEQUENCE" defaultValue="id_seq" />
+        </loadData>
+    </changeSet>
+
+</databaseChangeLog>
+
