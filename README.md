@@ -8,7 +8,7 @@ Liquibase will generate a proper SQL statement in migrate.sql but it can not exe
 
 2. change `liquibase.properties` to match your DB settings
 
-3. run `mvn clean compile liquibase:updateSQL` and check `target/migrate.sql` it contains the following line, which also is what I expected:
+3. run `mvn clean compile liquibase:updateSQL` and check `target/migrate.sql` it contains the following line, which is what I expected:
     ```
     INSERT INTO "user" (id, name) VALUES (nextval('id_seq'), 'user1'),(nextval('id_seq'), 'user2');
     ```
