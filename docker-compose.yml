@@ -1,0 +1,9 @@
+version: '3.2'
+services:
+  postgres:
+    image: "postgres:latest"
+    ports:
+      - target: 5432
+        published: 9876
+        protocol: tcp
+        mode: host
