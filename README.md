@@ -5,8 +5,9 @@ Liquibase will generate a proper SQL statement in migrate.sql but it can not exe
 
 ## How to reproduce
 1. Start a PostgreSQL instance. If you have docker installed on you machine, you can make use of the `docker-compose.yml`
-    file with `docker-compose up`. This will start a PostgreSQL container on port `9876` with default credentials. You can
-    remove / reset this container by using `docker-compose stop && docker-compose rm`
+    file with `docker-compose up -d`. This will start a PostgreSQL container on port `9876` with default credentials. You can
+    remove / reset this container by using `docker-compose down`. To reset and immediately restart you can use
+    `docker compose down && docker-compose up -d`.
     
 2. (Optional) If you don't use the `docker-compose.yml` file or changed the file please adapt `liquibase.properties` to match your DB settings.
 
